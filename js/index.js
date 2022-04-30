@@ -40,7 +40,7 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(posicionActual);
         georeferencia = true;
     } else {
-        datas.innerHTML = "La Geolocalizacion no es admitidad";
+        datas.innerHTML = '<span class="material-symbols-outlined">warning</span>La Geolocalizacion no es admitidad';
     }
 }
 
@@ -52,7 +52,7 @@ function posicionActual(posicion) {
 clickBuscar.addEventListener('click', ()=>{
    if(buscar.value === ''){
         datas.style.cssText = 'animacion';
-        datas.innerHTML = 'Por favor, completa el campo con el nombre de una ciudad para consultar el clima';
+        datas.innerHTML = '<span class="material-symbols-outlined">warning</span>Por favor, completa el campo con el nombre de una ciudad para consultar el clima';
    }else{
         buscarClima(buscar.value);
    }
@@ -71,25 +71,27 @@ function buscarClima(ciudadBuscar) {
 
             if(data.cod === '404'){
                 datas.style.cssText = 'transition: all 0.5s ease-out;';
-                datas.innerHTML = 'Ciudad no encontrada, verifca que este tipeada correctamente';
+                datas.innerHTML = '<span class="material-symbols-outlined">warning</span>Ciudad no encontrada, verifca que este tipeada correctamente';
             }else{
                 console.log(data);
                 datas.style.cssText = 'transition: all 0.5s ease-out;';
 
                 datas.innerHTML = 
             `
-                <div class="container ciudad d-flex flex-row">
-                    <div class="container ciudad d-flex flex-row">
-                        <h2>Ciudad: <span id="ciudad">${data.name}</span></h2>
-                        <p><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"></p>
-                        <p>${data.weather[0].description}</p>
-                        <p><b>Temperatura:</b><span id="tem">${data.main.temp} °C</span></p>
-                        <p><b>Temperatura Máxima:</b><span id="temmax">${data.main.temp_max} °C</span></p>
-                        <p><b>Temperatura Mínima:</b><span id="temmin">${data.main.temp_min} °C</span></p>
-                        <p><b>Humedad:</b><span id="humedad">${data.main.humidity} %</span></p>
-                        <p><b>Sensación Térmica:</b><span id="st">${data.main.feels_like} °C</span></p>
-                        <p><b>Presión Atmosferica:</b><span id="pa">${data.main.pressure} HPA</span></p>
-                        <p><b>Velocidad del viento:</b><span id="vv">${data.wind.speed} KM/H</span></p>
+                <div class="container ciudad-cont d-flex flex-row">
+                    <div class="flex-column">
+                        <h2><span id="ciudad">${data.name}</span></h2>
+                        <div class="container ciudad d-flex flex-row">
+                            <p><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"></p>
+                            <p>${data.weather[0].description}</p>
+                            <p><b>Temperatura:</b><span id="tem">${data.main.temp} °C</span></p>
+                            <p><b>Temperatura Máxima:</b><span id="temmax">${data.main.temp_max} °C</span></p>
+                            <p><b>Temperatura Mínima:</b><span id="temmin">${data.main.temp_min} °C</span></p>
+                            <p><b>Humedad:</b><span id="humedad">${data.main.humidity} %</span></p>
+                            <p><b>Sensación Térmica:</b><span id="st">${data.main.feels_like} °C</span></p>
+                            <p><b>Presión Atmosferica:</b><span id="pa">${data.main.pressure} HPA</span></p>
+                            <p><b>Velocidad del viento:</b><span id="vv">${data.wind.speed} KM/H</span></p>
+                        </div>
                     </div>
 
                     <div class="p-0">
@@ -112,7 +114,7 @@ function buscarClima(ciudadBuscar) {
     }catch(error){
         if(error.cod === '404'){
             datas.style.cssText = 'transition: all 0.5s ease-out;';
-            datas.innerHTML = 'Ciudad no encontrada, verifca que este tipeada correctamente';
+            datas.innerHTML = '<span class="material-symbols-outlined">warning</span>Ciudad no encontrada, verifca que este tipeada correctamente';
         }
     }
 }
