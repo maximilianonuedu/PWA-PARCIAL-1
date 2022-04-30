@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
+    <link rel="manifest" href="imgs/favicon/site.webmanifest">
+    <link rel="mask-icon" href="imgs/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximiliano Nunez, Cátedra PWA</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/logo.css">
+    <!-- Pallete color: https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51 -->
+</head>
+<body>
+    
+    
+
+    <div hidden id="spinner">
+        
+        <div class="wrapper">
+            <div class="sun"></div>
+            <div class="cloud">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="cloud_s">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="cloud_vs">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            <div class="haze"></div>
+            <div class="haze_stripe"></div>
+            <div class="haze_stripe"></div>
+            <div class="haze_stripe"></div>
+            <div class="thunder"></div>
+            <div class="rain">
+               <ul>
+                 <li></li>
+                 <li></li>
+                 <li></li>
+              </ul>
+            </div>
+            <div class="sleet">
+               <ul>
+                 <li></li>
+                 <li></li>
+                 <li></li>
+              </ul>
+            </div>
+          </div>
+    </div>
+   
+
+    <div class="container-fluid cont p-0 d-flex flex-column align-items-center">
+
+        <div class="text-center container">
+            <h1 class="d-none">API clima</h1>
+            <img class="img-fluid col-8 col-lg-4 col-md-5" src="./imgs/logo.svg" alt="Logo api">
+
+            <div class="input-group col-12 mb-3">
+                <label for="buscar">
+                    <input placeholder="Ingrese el nombre de una ciudad" id="buscar" type="text" class="form-control" aria-label="Text input with dropdown button">
+                </label>
+                <Button id="clickbuscar"><span class="material-symbols-outlined">
+                    search
+                    </span></Button>
+            </div>
+        </div>
+
+
+        <div id="data" class="data">
+            <div class="validarData" id="validar"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
