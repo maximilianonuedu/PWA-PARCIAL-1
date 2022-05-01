@@ -85,16 +85,16 @@ function buscarClima(ciudadBuscar) {
                             </div>
                             <div class="d-flex flex-column text-center">
                                 <p><img class="img-fluid" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"></p>
-                                <p>${data.weather[0].description.toUpperCase()}</p>
+                                <p class="descripcion">${data.weather[0].description.toUpperCase()}</p>
                             </div>
                        </div>
                         <div class="container ciudad d-flex flex-wrap justify-content-between text-center">
-                            <p><b>Temperatura Máxima</b><span id="temmax">${data.main.temp_max} °C</span></p>
-                            <p><b>Temperatura Mínima</b><span id="temmin">${data.main.temp_min} °C</span></p>
-                            <p><b>Humedad</b><span id="humedad">${data.main.humidity} %</span></p>
-                            <p><b>Sensación Térmica</b><span id="st">${data.main.feels_like} °C</span></p>
-                            <p><b>Presión Atmosferica</b><span id="pa">${data.main.pressure} HPA</span></p>
-                            <p><b>Velocidad del viento</b><span id="vv">${data.wind.speed} KM/H</span></p>
+                            <p><b>Temperatura Máxima</b><span id="temmax"><i class="fa-solid fa-temperature-high"></i>${data.main.temp_max} °C</span></p>
+                            <p><b>Temperatura Mínima</b><span id="temmin"><i class="fa-solid fa-temperature-low"></i>${data.main.temp_min} °C</span></p>
+                            <p><b>Humedad</b><span id="humedad"><i class="fa-solid fa-droplet-percent"></i>${data.main.humidity} %</span></p>
+                            <p><b>Sensación Térmica</b><span id="st"><i class="fa-solid fa-temperature-list"></i>${data.main.feels_like} °C</span></p>
+                            <p><b>Presión Atmosferica</b><span id="pa"><i class="fa-solid fa-arrow-down-wide-short"></i>${data.main.pressure} HPA</span></p>
+                            <p><b>Velocidad del viento</b><span id="vv"><i class="fa-solid fa-wind"></i>${data.wind.speed} KM/H</span></p>
                         </div>
                         <div class="p-0 mapa">
                         <iframe
