@@ -101,20 +101,18 @@
           </div>
     </div>
     <div class="container-fluid cont p-0 d-flex flex-column align-items-center">
-        <div class="text-center container">
+        <div class="text-center container p-0">
             <h1 class="d-none">API clima</h1>
             <img class="img-fluid col-8 col-lg-4 col-md-5" src="./imgs/logo.svg" alt="Logo api">
 
-            <div class="input-group col-12 mb-3">
-                <label for="buscar">
+            <div class="input-group col-12 m-3 mt-lg-3 mb-lg-3 ml-lg-0 mr-lg-0  m-md-0 m-lg-0s flex-nowrap container">
+                <label class="col-12" for="buscar">
                     <input placeholder="Ingrese el nombre de una ciudad" id="buscar" type="text" class="form-control" aria-label="Text input with dropdown button">
                 </label>
-                <Button id="clickbuscar"><span class="material-symbols-outlined">
-                    search
-                    </span></Button>
+                <Button id="clickbuscar"><span class="material-symbols-outlined">search</span></Button>
             </div>
         </div>
-        <div id="data" class="data">
+        <div id="data" class="data container p-0">
             <div class="validarData" id="validar"></div>
         </div>
     </div>

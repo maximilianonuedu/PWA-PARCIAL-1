@@ -21,7 +21,6 @@ let loader                  = document.getElementById('loading');
 let mapa                    = document.getElementById('mapa');
 let icon = '';
 
-
 window.onload = function() {
     if (localStorage.length != 0) {
         let ultimaBusqueda = localStorage.getItem('datos');
@@ -30,7 +29,6 @@ window.onload = function() {
     }else{
         getLocation()
         datas.innerHTML = 'Ingrese una ciudad para consultar el clima </br>';
-        datas.innerHTML += new Date().toDateString();
         datas.style.cssText = 'text-align: center; color:#000 !important;';
     }
 };
@@ -52,7 +50,7 @@ function posicionActual(posicion) {
 clickBuscar.addEventListener('click', ()=>{
    if(buscar.value === ''){
         datas.style.cssText = 'animacion';
-        datas.innerHTML = '<span class="material-symbols-outlined">warning</span>Por favor, completa el campo con el nombre de una ciudad para consultar el clima';
+        datas.innerHTML = '<div class="warning"><span class="material-symbols-outlined">warning</span>Por favor, completa el campo con el nombre de una ciudad para consultar el clima</div>';
    }else{
         buscarClima(buscar.value);
    }
@@ -78,23 +76,27 @@ function buscarClima(ciudadBuscar) {
 
                 datas.innerHTML = 
             `
-                <div class="container ciudad-cont d-flex flex-row">
-                    <div class="flex-column">
-                        <h2><span id="ciudad">${data.name}</span></h2>
-                        <div class="container ciudad d-flex flex-row">
-                            <p><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"></p>
-                            <p>${data.weather[0].description}</p>
-                            <p><b>Temperatura:</b><span id="tem">${data.main.temp} °C</span></p>
-                            <p><b>Temperatura Máxima:</b><span id="temmax">${data.main.temp_max} °C</span></p>
-                            <p><b>Temperatura Mínima:</b><span id="temmin">${data.main.temp_min} °C</span></p>
-                            <p><b>Humedad:</b><span id="humedad">${data.main.humidity} %</span></p>
-                            <p><b>Sensación Térmica:</b><span id="st">${data.main.feels_like} °C</span></p>
-                            <p><b>Presión Atmosferica:</b><span id="pa">${data.main.pressure} HPA</span></p>
-                            <p><b>Velocidad del viento:</b><span id="vv">${data.wind.speed} KM/H</span></p>
+                <div class="container ciudad-cont col-12 d-flex flex-row">
+                    <div class="flex-column col-12">
+                       <div class="d-flex col-12 justify-content-between align-items-center">
+                            <div class="d-flex flex-column text-center">
+                                <h2><span id="tem">${data.main.temp} °C</span></h2>
+                                <p><span id="ciudad">${data.name}</span></p>
+                            </div>
+                            <div class="d-flex flex-column text-center">
+                                <p><img class="img-fluid" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"></p>
+                                <p>${data.weather[0].description.toUpperCase()}</p>
+                            </div>
+                       </div>
+                        <div class="container ciudad d-flex flex-wrap justify-content-between text-center">
+                            <p><b>Temperatura Máxima</b><span id="temmax">${data.main.temp_max} °C</span></p>
+                            <p><b>Temperatura Mínima</b><span id="temmin">${data.main.temp_min} °C</span></p>
+                            <p><b>Humedad</b><span id="humedad">${data.main.humidity} %</span></p>
+                            <p><b>Sensación Térmica</b><span id="st">${data.main.feels_like} °C</span></p>
+                            <p><b>Presión Atmosferica</b><span id="pa">${data.main.pressure} HPA</span></p>
+                            <p><b>Velocidad del viento</b><span id="vv">${data.wind.speed} KM/H</span></p>
                         </div>
-                    </div>
-
-                    <div class="p-0">
+                        <div class="p-0 mapa">
                         <iframe
                             width="100%"
                             frameborder="0"
@@ -105,6 +107,7 @@ function buscarClima(ciudadBuscar) {
                             src="https://www.google.com/maps/embed/v1/place?key=${API_KEY_GOOGLE}
                             &q=${data.name}">
                         </iframe>
+                    </div>
                     </div>
                 </div>
             `;

@@ -20,7 +20,7 @@
 
 #spinner::after {
   content: "";
-  background-color: rgb(0, 0, 0);
+  background-color: #90E0EF;
   height:100vh !important;
   width: 100vw !important;
 }
@@ -66,15 +66,20 @@ body{
   background-size: cover !important;
 }
 
+.warning{
+  text-align:center;
+  font-size:1.3em;
+}
+
 .data{
   color: rgb(76, 76, 76) !important;
-  display: flex;
   align-items: center;
+  text-align: center;
+  font-size:1.3em;
 }
 .input-group{
   display: flex;
   justify-content:center;
-  margin: 20px;
 }
 
 .input-group input{
@@ -88,14 +93,59 @@ button{
 }
 
 .ciudad-cont{
+  width: 100% !important;
   background-color:#CAF0F8; 
   padding:20px;
+  border-radius: 5px;
+}
+
+#tem{
+  font-size:2em;
+  color: #03045E;
+}
+
+#ciudad{
+  font-size:1.3em;
+  color:#00B4D8;
 }
 
 .ciudad{
-  background-color:#03045E ;
+  background-color:#90E0EF ;
   border-radius: 5px;
-  color:#fff
+  color:#0077B6;
+  align-items: center;
+  display: flex;
+  padding: 15px;
+}
+
+.ciudad div{
+  height:40vh !important;
+}
+
+.mapa{
+  height:35vh !important;
+}
+
+.mapa iframe{
+  height: 100% !important;
+}
+
+.ciuddad div iframe{
+  height:100% !important;
+}
+
+.ciudad p{
+  display:flex;
+  flex-direction:column-reverse;
+  text-align: center;
+  font-size: 1em;
+  margin:0
+}
+
+
+.ciudad p span{
+  font-size:2em;
+  font-weight: 600;
 }
 
 #clickbuscar{
