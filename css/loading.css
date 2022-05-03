@@ -56,7 +56,6 @@ iframe {
 }
 
 body{
-  display:flex;
   align-items: center;
   justify-content: center;
   background-color:#fff !important;
@@ -178,4 +177,13 @@ button{
 .form-control:focus ~ .input-group{
   transform: scale(1.3) !important;
   transition: all 0.5s !important;
+}
+
+@media (max-width: 564px) {
+  .ciudad-cont{
+    padding:10px !important;
+  }
+  .ciudad{
+    justify-content: center !important; 
+  }
 }
