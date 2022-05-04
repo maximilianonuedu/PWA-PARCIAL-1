@@ -9,17 +9,17 @@ let validar                 = document.getElementById('validar');
 let info;
 let coordenadas             = [];
 
-let ciudad                  = document.getElementById('ciudad');
-let tem                     = document.getElementById('tem');
-let temmax                  = document.getElementById('temmax');
-let temmin                  = document.getElementById('temmin');
-let humedad                 = document.getElementById('humedad');
-let st                      = document.getElementById('st');
-let pa                      = document.getElementById('pa');
-let vv                      = document.getElementById('vv');
-let loader                  = document.getElementById('loading');  
-let mapa                    = document.getElementById('mapa');
-let icon = '';
+// let ciudad                  = document.getElementById('ciudad');
+// let tem                     = document.getElementById('tem');
+// let temmax                  = document.getElementById('temmax');
+// let temmin                  = document.getElementById('temmin');
+// let humedad                 = document.getElementById('humedad');
+// let st                      = document.getElementById('st');
+// let pa                      = document.getElementById('pa');
+// let vv                      = document.getElementById('vv');
+// let loader                  = document.getElementById('loading');  
+// let mapa                    = document.getElementById('mapa');
+// let icon = '';
 
 window.onload = function() {
     if (localStorage.length != 0) {
